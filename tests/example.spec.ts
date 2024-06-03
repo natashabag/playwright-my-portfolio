@@ -54,3 +54,25 @@ test("check contact me section", async ({ page }) => {
   await contactMeButton.click();
   await expect(page.locator('//*[@id="contact"]/h1')).toBeVisible();
 });
+
+test("should display resume pdf file", async ({ page }) => {
+  await page.goto("https://natashabag.github.io/");
+  const [resumePage] = await Promise.all([
+    page.waitForEvent("popup"),
+    page.click("text=Download Resume"),
+  ]);
+  await resumePage.waitForLoadState();
+  expect(resumePage.url()).toBe(
+    "https://natashabag.github.io/assets/Natalia_Bagramian_QA_Engineer.pdf"
+  );
+});
+
+test("should display github page", async ({ page }) => {
+  await page.goto("https://natashabag.github.io/");
+  const [gitHubPage] = await Promise.all([
+    page.waitForEvent("popup"),
+    page.click("text=Visit GitHub"),
+  ]);
+  await gitHubPage.waitForLoadState();
+  expect(gitHubPage.url()).toBe("https://github.com/natashabag/");
+});
