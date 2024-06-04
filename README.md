@@ -1,4 +1,4 @@
-# My Portfolio- Playwright + Typescipt project 👩🏻‍💻
+# My Portfolio- Playwright + TypeScript project 👩🏻‍💻
 
 ### This project is designed to test my portfolio
 
