@@ -92,6 +92,16 @@ test.describe("Button Tests", () => {
       "https://github.com/natashabag/Urban-Routes-Web-App"
     );
   });
+  test("should open LinkedIn page", async ({ page }) => {
+    const [linkedInPage] = await Promise.all([
+      page.waitForEvent("popup"),
+      page.locator('//*[@id="contact"]/div/div[2]/p/a').click(),
+    ]);
+    await linkedInPage.waitForLoadState();
+    expect(linkedInPage.url()).toBe(
+      "https://www.linkedin.com/in/natalia-bagramian"
+    );
+  });
 });
 
 test.describe("Arrow Tests", () => {
