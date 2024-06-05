@@ -5,9 +5,11 @@
 ## Test Coverage:
 
 1. Correct display of the website title.
-2. Redirection to various sections such as "About Me," "Experience," "Projects," and "Contact Me."
-3. Opening of the resume PDF file and GitHub page.
-4. Correct redirection within the footer section.
+2. Redirection to various sections such as "About Me," "Experience," "Projects," and "Contact Me." from navigation links on top.
+3. Redirection to various sections with arrows. 
+4. Opening of the resume PDF file, GitHub and LinkedIn page.
+5. Opening projects. 
+6. Correct redirection within the footer section.
 
 ## Getting Started:
 
