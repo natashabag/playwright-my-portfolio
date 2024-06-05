@@ -1,4 +1,11 @@
 import { test, expect } from "@playwright/test";
+import {
+  navigationSelectors,
+  projectSelectors,
+  socialMediaSelectors,
+  arrowSelectors,
+  footerSelectors,
+} from "./selectors.ts";
 
 test.describe("Navigation Links", () => {
   test.beforeEach(async ({ page }) => {
@@ -10,30 +17,22 @@ test.describe("Navigation Links", () => {
   });
 
   test("should redirect to about me section", async ({ page }) => {
-    const aboutButton = page.getByRole("link", { name: "About me" }).nth(0);
-    await aboutButton.click();
+    await page.click(navigationSelectors.aboutButtonTop);
     await expect(page.locator('//*[@id="about"]/h1')).toBeVisible();
   });
 
   test("should redirect to experience section", async ({ page }) => {
-    const experienceButton = page
-      .getByRole("link", { name: "Experience" })
-      .nth(0);
-    await experienceButton.click();
+    await page.click(navigationSelectors.experienceButtonTop);
     await expect(page.locator('//*[@id="experience"]/h1')).toBeVisible();
   });
 
   test("should redirect to projects section", async ({ page }) => {
-    const projectsButton = page.getByRole("link", { name: "Projects" }).nth(0);
-    await projectsButton.click();
+    await page.click(navigationSelectors.projectsButtonTop);
     await expect(page.locator('//*[@id="projects"]/h1')).toBeVisible();
   });
 
   test("should redirect to contact me section", async ({ page }) => {
-    const contactMeButton = page
-      .getByRole("link", { name: "Contact me" })
-      .nth(0);
-    await contactMeButton.click();
+    await page.click(navigationSelectors.contactMeButtonTop);
     await expect(page.locator('//*[@id="contact"]/h1')).toBeVisible();
   });
 });
